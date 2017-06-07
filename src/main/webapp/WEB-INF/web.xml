@@ -1,13 +1,19 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
-<web-app>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>Servlet 3.0 Web Application</display-name>
 
 	<!-- 设置根上下文配置文件的位置 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+		<param-value>classpath:spring/root-context.xml</param-value>
+	</context-param>
+
+	<!-- 为上下文设置默认的profile,当通过系统属性/环境变量/JNDI设置spring.profiles.active后，不再起作用 -->
+	<context-param>
+		<param-name>spring.profiles.default</param-name>
+		<param-value>dev</param-value>
 	</context-param>
 
 	<!-- 注册ContextLoaderListener -->
@@ -17,22 +23,32 @@
 
 	<!-- 注册DispatcherServlet -->
 	<servlet>
-		<servlet-name>globleServlet</servlet-name>
-		<servlet-class>
-			org.springframework.web.servlet.DispatcherServlet
-		</servlet-class>
-		<!-- <init-param> 用与注册controller 之类
+		<servlet-name>globalServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>
-				/WEB-INF/spring/servlet-context.xml
-			</param-value>
+			<param-value> classpath:spring/servlet-context.xml </param-value>
+		</init-param>
+		<!-- 上下文指定默认的profile
+		<init-param>
+			<param-name>spring.profiles.default</param-name>
+			<param-value>dev</param-value>
 		</init-param> -->
 		<load-on-startup>1</load-on-startup>
+		<multipart-config>
+			<location>/tmp/uploads</location>
+			<!-- 文件大小不超过2MB -->
+			<max-file-size>2097152</max-file-size>
+			<!-- 整个请求不超过4MB -->
+			<max-request-size>4149304</max-request-size>
+			<!-- 文件超过多大写入磁盘 -->
+			<file-size-threshold>0</file-size-threshold>
+		</multipart-config>
 	</servlet>
 
 	<!-- 将DispatcherServlet映射到"/" -->
 	<servlet-mapping>
-		<servlet-name>globleServlet</servlet-name>
+		<servlet-name>globalServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
