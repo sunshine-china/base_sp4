@@ -25,5 +25,6 @@
 
 	<import resource="classpath*:spring/datasource/*.xml"/>
 	<import resource="classpath:spring/mybatis.xml"/>
+	<import resource="classpath:spring/cache/cache.xml"/>
 
 </beans>

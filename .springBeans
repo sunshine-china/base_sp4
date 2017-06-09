@@ -13,6 +13,7 @@
 		<config>src/main/resources/spring/security/security.xml</config>
 		<config>src/main/resources/spring/datasource/datasource-dev.xml</config>
 		<config>src/main/resources/spring/mybatis.xml</config>
+		<config>src/main/resources/spring/cache/cache.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
