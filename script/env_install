@@ -1,0 +1,3 @@
+docker pull wnameless/oracle-xe-11g
+docker run -d -p 9090:8080 -p 1521:1521 wnameless/oracle-xe-11g
+安装oracle_jdbc的jar文件到maven

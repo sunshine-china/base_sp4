@@ -1,9 +1,9 @@
 package com.base.flow.flow;
 
 import static com.base.flow.domain.PaymentType.CREDIT_CARD;
-import static org.apache.log4j.Logger.getLogger;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,7 +18,7 @@ import com.base.flow.service.CustomerService;
 
 @Component
 public class PizzaFlowActions {
-	private static final Logger LOGGER = getLogger(PizzaFlowActions.class);
+	private static final Logger LOGGER = LogManager.getLogger(PizzaFlowActions.class);
 
 	public Customer lookupCustomer(String phoneNumber) throws CustomerNotFoundException {
 		Customer customer = customerService.lookupCustomer(phoneNumber);

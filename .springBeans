@@ -9,8 +9,10 @@
 	<configs>
 		<config>src/main/resources/spring/root-context.xml</config>
 		<config>src/main/resources/spring/servlet-context.xml</config>
-		<config>src/main/resources/spring/datasource/datasource-dev.xml</config>
 		<config>src/main/resources/spring/webflow/flow-config.xml</config>
+		<config>src/main/resources/spring/security/security.xml</config>
+		<config>src/main/resources/spring/datasource/datasource-dev.xml</config>
+		<config>src/main/resources/spring/mybatis.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

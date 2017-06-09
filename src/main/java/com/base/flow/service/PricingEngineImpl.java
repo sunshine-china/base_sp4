@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import com.base.flow.domain.Order;
@@ -18,7 +19,7 @@ import com.base.flow.domain.PizzaSize;
 @SuppressWarnings("serial")
 @Component
 public class PricingEngineImpl implements PricingEngine, Serializable {
-	private static final Logger LOGGER = Logger.getLogger(PricingEngineImpl.class);
+	private static final Logger LOGGER = LogManager.getLogger(PricingEngineImpl.class);
 
 	private static Map<PizzaSize, Float> SIZE_PRICES;
 	static {

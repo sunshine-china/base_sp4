@@ -1,0 +1,1 @@
+insert into user_info values(1,'ะกอ๕','123123','1399999788','1',to_timestamp('2017-06-07 12:00:00','yyyy-mm-dd hh24:mi:ss'),null,'F','xx@163.com');

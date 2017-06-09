@@ -3,7 +3,8 @@ package com.base.flow.flow;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.webflow.execution.Action;
 import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
@@ -12,7 +13,7 @@ import com.base.flow.domain.Pizza;
 import com.base.flow.domain.Topping;
 
 public class SpecialtyPizzaBuilder implements Action {
-	private static final Logger LOGGER = Logger.getLogger(SpecialtyPizzaBuilder.class);
+	private static final Logger LOGGER = LogManager.getLogger(SpecialtyPizzaBuilder.class);
 
 	public Event execute(RequestContext request) throws Exception {
 		String type = request.getRequestParameters().get("pizzaType");

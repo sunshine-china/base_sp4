@@ -7,10 +7,12 @@
 
 	<!-- 注解扫描 -->
 	<context:component-scan base-package="com.base">
-		<context:exclude-filter type="regex" expression="com.base.*.web"/>
+		<context:exclude-filter type="regex"
+			expression="com.base.*.web" />
 	</context:component-scan>
-	
-	<!-- thymeleaf模板 -->
+
+<!-- 	<bean class="com.base.config.SecurityConfig"></bean>
+ -->	<!-- thymeleaf模板 -->
 	<bean id="viewResolver" class="org.thymeleaf.spring4.view.ThymeleafViewResolver"
 		p:templateEngine-ref="templateEngine"></bean>
 
@@ -20,8 +22,8 @@
 	<bean id="templateResolver"
 		class="org.thymeleaf.templateresolver.ServletContextTemplateResolver"
 		p:prefix="/WEB-INF/templates/" p:suffix=".html" p:templateMode="HTML5"></bean>
-		
-		
-		<import resource="classpath:spring/webflow/flow-config.xml"/>
-		
+
+	<import resource="classpath*:spring/datasource/*.xml"/>
+	<import resource="classpath:spring/mybatis.xml"/>
+
 </beans>
