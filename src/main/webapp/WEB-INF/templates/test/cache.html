@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Cache Test</title>
+</head>
+<body>
+	<form th:action="@{/cache/save}" th:method="post" th:object="${userInfo}">
+		<div>
+			<div>
+				<label for="username">用户名:</label>
+				<input type="text" name="username" id="username" />
+			</div>
+			<div>
+				<label for="password">密码:</label>
+				<input type="password" name="password" id="password" />
+			</div>
+			<div>
+				<input type="submit" value="确认" />
+			</div>
+		</div>
+	</form>
+</body>
+</html>

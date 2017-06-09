@@ -29,11 +29,8 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value> classpath:spring/servlet-context.xml </param-value>
 		</init-param>
-		<!-- 上下文指定默认的profile
-		<init-param>
-			<param-name>spring.profiles.default</param-name>
-			<param-value>dev</param-value>
-		</init-param> -->
+		<!-- 上下文指定默认的profile <init-param> <param-name>spring.profiles.default</param-name> 
+			<param-value>dev</param-value> </init-param> -->
 		<load-on-startup>1</load-on-startup>
 		<multipart-config>
 			<location>/tmp/uploads</location>
@@ -51,18 +48,34 @@
 		<servlet-name>globalServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
+
 	<!-- spring security filter -->
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
-		<filter-class>
-			org.springframework.web.filter.DelegatingFilterProxy
-		</filter-class>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	
+
+
+	<!-- encoding filter -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 </web-app>

@@ -1,6 +1,7 @@
 E:\workspace\base\src\main\java\com\base\flow\domain\CreditCardPayment.java
 E:\workspace\base\src\main\java\com\base\flow\domain\Customer.java
 E:\workspace\base\src\main\java\com\base\flow\service\CustomerNotFoundException.java
+E:\workspace\base\src\main\java\com\base\test\web\RedisController.java
 E:\workspace\base\src\main\java\com\base\test\web\TestController.java
 E:\workspace\base\src\main\java\com\base\flow\service\OrderServiceImpl.java
 E:\workspace\base\src\main\java\com\base\flow\PaymentException.java
@@ -8,6 +9,7 @@ E:\workspace\base\src\main\java\com\base\flow\service\PricingEngine.java
 E:\workspace\base\src\main\java\com\base\test\web\CacheController.java
 E:\workspace\base\src\main\java\com\base\flow\service\CustomerServiceImpl.java
 E:\workspace\base\src\main\java\com\base\user\repo\UserMapper.java
+E:\workspace\base\src\main\java\com\base\config\CacheConfig.java
 E:\workspace\base\src\main\java\com\base\auth\web\AuthController.java
 E:\workspace\base\src\main\java\com\base\test\web\RootContoller.java
 E:\workspace\base\src\main\java\com\base\auth\AuthUserDetailsService.java
@@ -27,4 +29,5 @@ E:\workspace\base\src\main\java\com\base\flow\domain\Topping.java
 E:\workspace\base\src\main\java\com\base\flow\service\PaymentProcessor.java
 E:\workspace\base\src\main\java\com\base\flow\domain\PaymentType.java
 E:\workspace\base\src\main\java\com\base\flow\domain\PizzaSize.java
+E:\workspace\base\src\main\java\com\base\test\service\CacheService.java
 E:\workspace\base\src\main\java\com\base\flow\web\HomeController.java

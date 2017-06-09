@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 /**
- * È«¾ÖÒì³£À¹½Ø
+ * å…¨å±€å¼‚å¸¸ç±»
  * 
  * @author Think
  *
@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class GlobalExceptionHandler {
 
 	@ExceptionHandler(Exception.class)
-	public String globalException() {
+	public String globalException(Exception e) {
+		e.printStackTrace();
 		return "error/500";
 	}
 }

@@ -4,31 +4,37 @@
 package com.base.test.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.base.test.service.CacheService;
+import com.base.user.domain.UserInfo;
 
 /**
  * @author Think
  *
  */
-@RestController
+@Controller
 @RequestMapping("/cache")
 public class CacheController {
 
 	@Autowired
-	private RedisTemplate<String, String> redisTemplate;
+	private CacheService cacheService;
 
-	@RequestMapping("/put")
-	public String put(String name, String value) {
-		redisTemplate.opsForValue().set(name, value);
-		return "success";
+	@RequestMapping("/")
+	public String index() {
+		return "test/cache";
+	}
+
+	@RequestMapping("/save")
+	public @ResponseBody UserInfo save(UserInfo userInfo) {
+		return cacheService.save(userInfo);
 	}
 
 	@RequestMapping("/get")
-	public String get(String name) {
-		String result = redisTemplate.opsForValue().get(name);
-		return result;
+	public @ResponseBody UserInfo get(String username) {
+		return cacheService.get(username);
 	}
 
 }
