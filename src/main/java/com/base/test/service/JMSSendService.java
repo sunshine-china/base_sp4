@@ -28,7 +28,8 @@ public class JMSSendService {
 		// return session.createObjectMessage(demoBean);
 		// }
 		// });
-		jmsOperations.convertAndSend(demoBean);
+		// jmsOperations.convertAndSend(demoBean);
+		jmsOperations.convertAndSend("base.test.queue", demoBean);
 		demoBean.setName("base.a.queue");
 		jmsOperations.convertAndSend("base.a.queue", demoBean);
 	}

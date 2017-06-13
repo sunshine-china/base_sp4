@@ -19,7 +19,7 @@
 	<amq:topic id="baseTopic" physicalName="base.test.topic" />
 
 	<amq:connectionFactory id="connectionFactory"
-		brokerURL="tcp://192.168.56.129:32769" />
+		brokerURL="tcp://192.168.56.129:32769" maxThreadPoolSize="1000" />
 
 
 	<!-- 可选消息转换器 ，使用消息转换器后，不用在创建MessageCreator，不使用send方法，使用convertAndSend方法 -->
@@ -31,6 +31,13 @@
 		<constructor-arg ref="connectionFactory"></constructor-arg>
 		<!-- 如果没有这个队列名会创建一个新的，或者通过defaultDestination-ref引用创建好的，使用了默认的话，send方法可以省略掉第一个参数 -->
 		<property name="defaultDestinationName" value="base.test.queue"></property>
+		<!-- 接收超时时间60s，超过后收到null -->
+		<property name="explicitQosEnabled" value="true"></property>
+		<property name="receiveTimeout" value="60000"></property>
+		<!-- 消息存活时间，默认永久，设置为30s -->
+		<property name="timeToLive" value="30000"></property>
+		<!-- 非持久化，只存在内存中 -->
+		<property name="deliveryPersistent" value="false"></property>
 		<!--消息转换器，默认simplemessageconverter <property name="messageConverter" ref="messageConverter"></property> -->
 	</bean>
 
