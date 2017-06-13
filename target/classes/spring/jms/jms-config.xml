@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:amq="http://activemq.apache.org/schema/core"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms.xsd
+	http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
+
+	<!-- <bean id="connectionFactory" class="org.apache.activemq.spring.ActiveMQConnectionFactory"> 
+		<property name="brokerURL" value="tcp://192.168.56.129:32769"></property> 
+		<property name="maxThreadPoolSize" value="1000"></property> </bean> <bean 
+		id="queue" class="org.apache.activemq.command.ActiveMQQueue"> <constructor-arg 
+		value="base.queue"></constructor-arg> </bean> <bean id="topic" class="org.apache.activemq.command.ActiveMQTopic"> 
+		<constructor-arg value="base.topic"></constructor-arg> </bean> -->
+
+
+	<amq:queue id="baseQueue" physicalName="base.test.queue" />
+
+	<amq:topic id="baseTopic" physicalName="base.test.topic" />
+
+	<amq:connectionFactory id="connectionFactory"
+		brokerURL="tcp://192.168.56.129:32769" />
+
+
+	<!-- 可选消息转换器 ，使用消息转换器后，不用在创建MessageCreator，不使用send方法，使用convertAndSend方法 -->
+	<bean id="messageConverter"
+		class="org.springframework.jms.support.converter.MappingJackson2MessageConverter"></bean>
+
+
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<constructor-arg ref="connectionFactory"></constructor-arg>
+		<!-- 如果没有这个队列名会创建一个新的，或者通过defaultDestination-ref引用创建好的，使用了默认的话，send方法可以省略掉第一个参数 -->
+		<property name="defaultDestinationName" value="base.test.queue"></property>
+		<!--消息转换器，默认simplemessageconverter <property name="messageConverter" ref="messageConverter"></property> -->
+	</bean>
+
+
+	<jms:listener-container>
+		<jms:listener destination="base.test.queue" ref="jmsReceiveHandler"
+			method="handlerMsg" />
+		<jms:listener destination="base.a.queue" ref="jmsReceiveHandler"
+			method="handderMsga" />
+	</jms:listener-container>
+
+</beans>
