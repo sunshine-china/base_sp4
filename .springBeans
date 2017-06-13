@@ -17,6 +17,8 @@
 		<config>src/main/resources/spring/cache/cache.xml</config>
 		<config>src/main/resources/spring/jms/jms-config.xml</config>
 		<config>src/main/resources/spring/amqp/amqp-config.xml</config>
+		<config>src/main/resources/spring/websocket/websocket-config.xml</config>
+		<config>src/main/resources/spring/websocket/stomp-config.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

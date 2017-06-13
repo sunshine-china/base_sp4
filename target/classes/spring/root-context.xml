@@ -32,5 +32,6 @@
 	<import resource="classpath*:spring/cache/*.xml" />
 	<import resource="classpath*:spring/jms/*.xml" />
 	<import resource="classpath*:spring/amqp/*.xml" />
+	<import resource="classpath*:spring/websocket/*.xml" />
 
 </beans>
