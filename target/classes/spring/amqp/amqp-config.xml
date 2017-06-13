@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+
+	<rabbit:connection-factory id="rabbitConnectionFactory"
+		host="192.168.56.129" port="32772" />
+
+
+	<!-- 管理组件 -->
+	<rabbit:admin connection-factory="rabbitConnectionFactory" />
+	<!-- 默认会有一个没有名称的direct Exchange,所有队列都会绑定到这个Exchange上，并且routingkey与队列的名称相同 -->
+	<rabbit:queue id="amqpTestQueue1" name="base.amqp.test.queue1"></rabbit:queue>
+	<rabbit:queue id="amqpTestQueue2" name="base.amqp.test.queue2"></rabbit:queue>
+	<rabbit:fanout-exchange name="base.test.exchange">
+		<rabbit:bindings>
+			<rabbit:binding queue="base.amqp.test.queue1" />
+			<rabbit:binding queue="base.amqp.test.queue2" />
+		</rabbit:bindings>
+	</rabbit:fanout-exchange>
+
+	<!-- 模板:默认的exchange和routing-key可以在发送消息时指定 -->
+	<rabbit:template id="rabbitTemplate"
+		connection-factory="rabbitConnectionFactory" exchange="base.test.exchange"
+		routing-key="base.amqp.test.queue1"></rabbit:template>
+
+
+	<rabbit:listener-container
+		connection-factory="rabbitConnectionFactory">
+		<rabbit:listener ref="amqpHandler" method="handlerAmpq"
+			queues="amqpTestQueue1,amqpTestQueue2" />
+	</rabbit:listener-container>
+
+	<!-- Direct：如果消息的routing key 与binding 的routing key直接匹配的话，消息将会路由到该队列上 -->
+	<!-- Topic:如果消息的routing key与binding的routing key符合通配符匹配的话，消息将会路由到该队列上 -->
+	<!-- Headers:如果消息参数表的头信息和值都与bingding参数表中相匹配，消息将会路由到该队列上 -->
+	<!-- Fanout：不管消息的routing key和参数表的头信息/值是什么，消息都将会路由到所有队列上 -->
+	<!-- 自定义绑定 -->
+	<!-- <rabbit:admin connection-factory="rabbitConnectionFactory" /> <rabbit:queue 
+		name="amqp.test.queue.1"></rabbit:queue> <rabbit:queue name="amqp.test.queue.2"></rabbit:queue> 
+		<rabbit:queue name="amqp.test.queue.3"></rabbit:queue> <rabbit:fanout-exchange 
+		name="base.fanout"> <rabbit:bindings> <rabbit:binding queue="amqp.test.queue.1"></rabbit:binding> 
+		<rabbit:binding queue="amqp.test.queue.2"></rabbit:binding> <rabbit:binding 
+		queue="amqp.test.queue.3"></rabbit:binding> </rabbit:bindings> </rabbit:fanout-exchange> -->
+
+</beans>

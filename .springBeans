@@ -16,6 +16,7 @@
 		<config>src/main/resources/spring/cache/redis.xml</config>
 		<config>src/main/resources/spring/cache/cache.xml</config>
 		<config>src/main/resources/spring/jms/jms-config.xml</config>
+		<config>src/main/resources/spring/amqp/amqp-config.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

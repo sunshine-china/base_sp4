@@ -1,6 +1,7 @@
 E:\workspace\base\src\main\java\com\base\flow\domain\CreditCardPayment.java
 E:\workspace\base\src\main\java\com\base\flow\domain\Customer.java
 E:\workspace\base\src\main\java\com\base\flow\service\CustomerNotFoundException.java
+E:\workspace\base\src\main\java\com\base\test\service\AmqpHandler.java
 E:\workspace\base\src\main\java\com\base\test\service\SecurityService.java
 E:\workspace\base\src\main\java\com\base\test\domain\DemoBean.java
 E:\workspace\base\src\main\java\com\base\test\service\JMSReceiveHandler.java
@@ -9,6 +10,7 @@ E:\workspace\base\src\main\java\com\base\test\web\TestController.java
 E:\workspace\base\src\main\java\com\base\flow\service\OrderServiceImpl.java
 E:\workspace\base\src\main\java\com\base\flow\PaymentException.java
 E:\workspace\base\src\main\java\com\base\flow\service\PricingEngine.java
+E:\workspace\base\src\main\java\com\base\test\web\AmqpController.java
 E:\workspace\base\src\main\java\com\base\test\web\CacheController.java
 E:\workspace\base\src\main\java\com\base\flow\service\CustomerServiceImpl.java
 E:\workspace\base\src\main\java\com\base\user\repo\UserMapper.java
@@ -29,6 +31,7 @@ E:\workspace\base\src\main\java\com\base\config\SecurityConfig.java
 E:\workspace\base\src\main\java\com\base\test\web\JMSController.java
 E:\workspace\base\src\main\java\com\base\flow\domain\Order.java
 E:\workspace\base\src\main\java\com\base\flow\service\PricingEngineImpl.java
+E:\workspace\base\src\main\java\com\base\test\service\AmqpService.java
 E:\workspace\base\src\main\java\com\base\flow\domain\Payment.java
 E:\workspace\base\src\main\java\com\base\flow\domain\CashOrCheckPayment.java
 E:\workspace\base\src\main\java\com\base\flow\domain\Topping.java
