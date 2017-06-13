@@ -5,14 +5,17 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+
+	<!-- 引入properties文件 -->
+	<context:property-placeholder location="classpath*:*.properties" />
+
 	<!-- 注解扫描 -->
 	<context:component-scan base-package="com.base">
 		<context:exclude-filter type="regex"
 			expression="com.base.*.web" />
 	</context:component-scan>
 
-<!-- 	<bean class="com.base.config.SecurityConfig"></bean>
- -->	<!-- thymeleaf模板 -->
+	<!-- <bean class="com.base.config.SecurityConfig"></bean> -->	<!-- thymeleaf模板 -->
 	<bean id="viewResolver" class="org.thymeleaf.spring4.view.ThymeleafViewResolver"
 		p:templateEngine-ref="templateEngine" p:characterEncoding="UTF-8"></bean>
 
@@ -21,12 +24,13 @@
 
 	<bean id="templateResolver"
 		class="org.thymeleaf.templateresolver.ServletContextTemplateResolver"
-		p:prefix="/WEB-INF/templates/" p:suffix=".html" p:templateMode="HTML5" p:characterEncoding="UTF-8"></bean>
+		p:prefix="/WEB-INF/templates/" p:suffix=".html" p:templateMode="HTML5"
+		p:characterEncoding="UTF-8"></bean>
 
-	<import resource="classpath*:spring/datasource/*.xml"/>
-	<import resource="classpath:spring/mybatis.xml"/>
-	<import resource="classpath*:spring/cache/*.xml"/>
-	<import resource="classpath*:spring/jms/*.xml"/>
-	<import resource="classpath*:spring/amqp/*.xml"/>
+	<import resource="classpath*:spring/datasource/*.xml" />
+	<import resource="classpath:spring/mybatis.xml" />
+	<import resource="classpath*:spring/cache/*.xml" />
+	<import resource="classpath*:spring/jms/*.xml" />
+	<import resource="classpath*:spring/amqp/*.xml" />
 
 </beans>

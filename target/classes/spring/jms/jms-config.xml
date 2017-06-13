@@ -19,7 +19,7 @@
 	<amq:topic id="baseTopic" physicalName="base.test.topic" />
 
 	<amq:connectionFactory id="connectionFactory"
-		brokerURL="tcp://192.168.56.129:32769" maxThreadPoolSize="1000" />
+		brokerURL="${JMS.BROKERURL}" maxThreadPoolSize="1000" />
 
 
 	<!-- 可选消息转换器 ，使用消息转换器后，不用在创建MessageCreator，不使用send方法，使用convertAndSend方法 -->
