@@ -10,6 +10,7 @@ E:\workspace\base\src\main\java\com\base\test\web\TestController.java
 E:\workspace\base\src\main\java\com\base\flow\service\OrderServiceImpl.java
 E:\workspace\base\src\main\java\com\base\flow\PaymentException.java
 E:\workspace\base\src\main\java\com\base\flow\service\PricingEngine.java
+E:\workspace\base\src\main\java\com\base\test\web\StompController.java
 E:\workspace\base\src\main\java\com\base\test\web\AmqpController.java
 E:\workspace\base\src\main\java\com\base\test\web\CacheController.java
 E:\workspace\base\src\main\java\com\base\flow\service\CustomerServiceImpl.java
@@ -26,6 +27,7 @@ E:\workspace\base\src\main\java\com\base\test\service\JMSSendService.java
 E:\workspace\base\src\main\java\com\base\flow\domain\Pizza.java
 E:\workspace\base\src\main\java\com\base\flow\flow\PizzaFlowActions.java
 E:\workspace\base\src\main\java\com\base\flow\flow\SpecialtyPizzaBuilder.java
+E:\workspace\base\src\main\java\com\base\test\service\StompRandomMessageSender.java
 E:\workspace\base\src\main\java\com\base\user\domain\UserInfo.java
 E:\workspace\base\src\main\java\com\base\flow\domain\PaymentDetails.java
 E:\workspace\base\src\main\java\com\base\test\websocket\MarcoHandler.java
@@ -33,6 +35,7 @@ E:\workspace\base\src\main\java\com\base\config\SecurityConfig.java
 E:\workspace\base\src\main\java\com\base\test\web\JMSController.java
 E:\workspace\base\src\main\java\com\base\flow\domain\Order.java
 E:\workspace\base\src\main\java\com\base\flow\service\PricingEngineImpl.java
+E:\workspace\base\src\main\java\com\base\test\domain\Shout.java
 E:\workspace\base\src\main\java\com\base\test\service\AmqpService.java
 E:\workspace\base\src\main\java\com\base\flow\domain\Payment.java
 E:\workspace\base\src\main\java\com\base\flow\domain\CashOrCheckPayment.java

@@ -10,11 +10,10 @@
 			<websocket:sockjs websocket-enabled="true"></websocket:sockjs>
 		</websocket:stomp-endpoint>
 		<!-- 代理目的地，而已/app开头的都会路由到带有@MessageMapping的注解方法中 -->
-		<!-- <websocket:simple-broker prefix="/queue,/topic" /> -->
-		<websocket:stomp-broker-relay prefix="/queue,/topic"
-			relay-host="${rabbitmq.host}" relay-port="${rabbitmq.port}"
-			/>
-	<!-- client-login="guest" client-passcode="guest" -->
+		<websocket:simple-broker prefix="/queue,/topic" />
+		<!-- <websocket:stomp-broker-relay prefix="/queue,/topic" relay-host="${rabbitmq.host}" 
+			relay-port="${rabbitmq.port}" client-login="guest" client-passcode="guest" 
+			auto-startup="true" /> -->
 	</websocket:message-broker>
 
 </beans>
