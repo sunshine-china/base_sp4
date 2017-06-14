@@ -9,6 +9,13 @@ package com.base.test.domain;
  */
 public class Shout {
 
+	public Shout() {
+	}
+
+	public Shout(String message) {
+		this.message = message;
+	}
+
 	private String message;
 
 	public String getMessage() {
