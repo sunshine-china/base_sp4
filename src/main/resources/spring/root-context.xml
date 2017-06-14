@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:task="http://www.springframework.org/schema/task"
-	 xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:c="http://www.springframework.org/schema/c"
 	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
@@ -17,10 +16,10 @@
 		<context:exclude-filter type="regex"
 			expression="com.base.*.web" />
 	</context:component-scan>
-	
+
 	<!-- 开启任务 -->
 	<task:annotation-driven />
-	
+
 	<!-- <bean class="com.base.config.SecurityConfig"></bean> -->	<!-- thymeleaf模板 -->
 	<bean id="viewResolver" class="org.thymeleaf.spring4.view.ThymeleafViewResolver"
 		p:templateEngine-ref="templateEngine" p:characterEncoding="UTF-8"></bean>
@@ -39,5 +38,6 @@
 	<import resource="classpath*:spring/jms/*.xml" />
 	<import resource="classpath*:spring/amqp/*.xml" />
 	<import resource="classpath*:spring/websocket/*.xml" />
+	<import resource="classpath*:spring/email/*.xml" />
 
 </beans>

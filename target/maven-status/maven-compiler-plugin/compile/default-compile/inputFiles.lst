@@ -18,6 +18,7 @@ E:\workspace\base\src\main\java\com\base\test\web\JMSController.java
 E:\workspace\base\src\main\java\com\base\flow\domain\Order.java
 E:\workspace\base\src\main\java\com\base\flow\service\PricingEngineImpl.java
 E:\workspace\base\src\main\java\com\base\test\service\AmqpService.java
+E:\workspace\base\src\main\java\com\base\test\web\MailController.java
 E:\workspace\base\src\main\java\com\base\flow\domain\Topping.java
 E:\workspace\base\src\main\java\com\base\flow\domain\PaymentType.java
 E:\workspace\base\src\main\java\com\base\test\service\CacheService.java
