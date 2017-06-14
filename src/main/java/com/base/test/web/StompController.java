@@ -73,8 +73,9 @@ public class StompController {
 		System.out.println("收到消息:---->" + demoBean);
 		stompService.broadcastSpittle(demoBean);
 		shout.setMessage("save demo for user>" + principal.getName());
-		// spittleRepo.save(spittle);
-		// feedService.broadcastSpittle(spittle);
+		// Exception Handler 测试
+		// int i = 0;
+		// int p = 10 / i;
 		return shout;
 	}
 }
